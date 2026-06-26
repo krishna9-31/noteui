@@ -1,70 +1,223 @@
-# Getting Started with Create React App
+# 📝 Simple Notes App with Tags & Search
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A full-stack Notes Management application built using **React.js** for the frontend and **Node.js** for the backend. The application allows users to create, view, search, and delete personal notes with optional tags, providing a clean and responsive interface for organizing information.
 
-## Available Scripts
+## 🚀 Live Demo
 
-In the project directory, you can run:
+**Frontend:** https://noteui-gold.vercel.app/
 
-### `npm start`
+## 📂 GitHub Repositories
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+**Frontend Repository:** https://github.com/krishna9-31/noteui
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+**Backend Repository:** https://github.com/krishna9-31/noteserver
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# 📖 Project Overview
 
-### `npm run build`
+This project was developed as part of a **Full Stack Internship Assignment**. The objective was to build a web application where users can manage personal notes with support for tags and search functionality.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The application follows a client-server architecture where the React frontend communicates with the Node.js backend through REST APIs.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# ✨ Features
 
-### `npm run eject`
+### Frontend
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+* Display all notes in a clean card layout
+* Create new notes
+* Add title and content
+* Add optional tags (e.g., `work`, `personal`)
+* Delete notes
+* Search notes by title
+* Filter notes using tags
+* Responsive user interface
+* API communication using Axios
+* State management using React Hooks
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Backend
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+REST APIs include:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+* **GET /notes** – Retrieve all notes or filter using search query/tag
+* **POST /notes** – Create a new note
+* **DELETE /notes/:id** – Delete an existing note
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# 🛠️ Tech Stack
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Frontend
 
-### Code Splitting
+* React.js
+* Axios
+* HTML5
+* CSS3
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Backend
 
-### Analyzing the Bundle Size
+* Node.js
+* Express.js
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Database
 
-### Making a Progressive Web App
+* JSON file / Local data storage (depending on your implementation)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
 
-### Advanced Configuration
+# 📁 Project Structure
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Frontend
 
-### Deployment
+```text
+noteui/
+│
+├── public/
+├── src/
+│   ├── components/
+│   ├── pages/
+│   ├── App.js
+│   └── index.js
+│
+├── package.json
+└── README.md
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Backend
 
-### `npm run build` fails to minify
+```text
+noteserver/
+│
+├── routes/
+├── controllers/
+├── models/
+├── server.js
+├── package.json
+└── README.md
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
+
+# 📦 Installation
+
+## Clone the repositories
+
+### Frontend
+
+```bash
+git clone https://github.com/krishna9-31/noteui.git
+```
+
+### Backend
+
+```bash
+git clone https://github.com/krishna9-31/noteserver.git
+```
+
+---
+
+## Install Dependencies
+
+### Frontend
+
+```bash
+cd noteui
+npm install
+npm start
+```
+
+### Backend
+
+```bash
+cd noteserver
+npm install
+npm start
+```
+
+---
+
+# 🔗 API Endpoints
+
+## Get All Notes
+
+```text
+GET /notes
+```
+
+## Create Note
+
+```http
+POST /notes
+```
+
+Example Request Body
+
+```json
+{
+  "title": "Meeting Notes",
+  "content": "Prepare project presentation",
+  "tags": ["work", "meeting"]
+}
+```
+
+## Delete Note
+
+```http
+DELETE /notes/:id
+```
+
+---
+
+# 📋 Note Model
+
+```json
+{
+  "id": 1,
+  "title": "Sample Note",
+  "content": "This is a sample note.",
+  "tags": ["personal"],
+  "createdAt": "2026-01-01T10:00:00Z"
+}
+```
+
+---
+
+# 🌟 Future Improvements
+
+* Edit existing notes
+* User authentication (Login & Signup)
+* MongoDB database integration
+* Markdown support
+* Tag autocomplete
+* Dark mode
+* Pagination
+* User-specific notes
+
+---
+
+# 📚 Learning Outcomes
+
+Through this project, I gained practical experience with:
+
+* React Hooks
+* REST API development
+* Axios for API communication
+* Express.js backend development
+* Component-based architecture
+* State management
+* CRUD operations
+* Frontend and backend integration
+
+---
+
+# 👨‍💻 Author
+
+**Krishna Chaitanya**
+
+GitHub: https://github.com/krishna9-31
+
+---
+
+⭐ If you found this project useful, consider giving it a star on GitHub.
